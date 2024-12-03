@@ -5,7 +5,7 @@ import testMiddleware from "../middlewares/authMiddleware.js";
 console.log("Resolved path:", path.resolve("../controllers/userController.js"));
 const router = express.Router();
 
-router.get("/", testMiddleware, getAllUsers);
-router.post("/", createUser);
+router.get("/", testMiddleware, getAllUsers); // we can call multiple middlewares here
+router.post("/", testMiddleware, createUser);
 
 export default router;
